@@ -1,0 +1,53 @@
+<h1 *ngIf="!isChange" mat-dialog-title>Cadastrar Dizimista</h1>
+<h1 *ngIf="isChange" mat-dialog-title>Editar Dizimista</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="data.Nome">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Data de Nascimento</mat-label>
+    <input matInput [(ngModel)]="data.DataNascimento">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Rua</mat-label>
+    <input matInput [(ngModel)]="data.Rua">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Bairro</mat-label>
+    <input matInput [(ngModel)]="data.Bairro">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Cidade</mat-label>
+    <input matInput [(ngModel)]="data.Cidade">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Estado</mat-label>
+    <input matInput [(ngModel)]="data.Estado">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Cep</mat-label>
+    <input matInput [(ngModel)]="data.Cep">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Telefone</mat-label>
+    <input matInput [(ngModel)]="data.Telefone">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>WhatsApp</mat-label>
+    <input matInput [(ngModel)]="data.WhatsApp">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button *ngIf="!isChange" [mat-dialog-close]="data" cdkFocusInitial>Cadastrar</button>
+  <button mat-button *ngIf="isChange" [mat-dialog-close]="data" cdkFocusInitial>Editar</button>
+</div>
